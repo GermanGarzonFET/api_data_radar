@@ -28,18 +28,11 @@ app.get('/', (req, res) => {
 
 
 //importaciones de las rutas
-import RolesRouter from './routes/roles.router';
-import UserRouter from './routes/usuarios.router';
-import LoginRouter from './routes/login.router';
 
-app.use('/api',RolesRouter);
-app.use('/api',UserRouter);
-app.use('/api',LoginRouter);
+import DataRouter from './routes/data.router';
 
 
-//libs
-import { createRoles } from './libs/onInit';
-createRoles();
+app.use('/api',DataRouter);
 
 //exportando el app
 module.exports = app;
